@@ -1,0 +1,139 @@
+@charset 'UTF-8';
+/* aqui fica as fonts importadas */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+/* ## Colors */
+
+/* ### Primary */
+
+--green500: hsl(158, 36%, 37%);
+--green700: hsl(158, 42%, 18%);
+
+/* ### Neutral */
+
+--black: hsl(212, 21%, 14%);
+--grey: hsl(228, 12%, 48%);
+--cream: hsl(30, 38%, 92%);
+--white: hsl(0, 0%, 100%);
+
+/*
+## Typography
+### Body Copy
+ */
+--font-size: 14px; /* (paragraph) */
+
+/* ### Font */
+
+--family1: 'Montserrat', Sans-serif;
+--weight-regular:500 ;
+--weight-semibold:700 ;
+/*  [Montserrat](https://fonts.google.com/specimen/Montserrat)
+- Weights: 500, 700
+ */
+--family2: 'Fraunces', Sans-serif ;
+/* [Fraunces](https://fonts.google.com/specimen/Fraunces)
+- Weights: 700
+ */
+}
+body {
+    font-family:var(--family1);
+    font-weight: var(--weight-regular);
+    background-color: var(--cream);
+    display: grid;
+    place-items:center;
+    width: 100vw;
+    min-height: 100vh;
+}
+main {
+    border-radius: .7rem;
+    background-color: var(--white);
+    overflow: hidden;
+    margin: 1rem;
+}
+picture img {
+    width: 100%;
+}
+/* Aqui ficará as configs dos artigos */
+section.artigos {
+    padding: 2rem;
+}
+section.artigos .perfume {
+    font-variant: small-caps;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-size: .7rem;
+    font-weight: var(--weight-regular);
+    margin-bottom: 1.4rem;
+    color: var(--grey);
+}
+section.artigos h1 {
+    font-family: var(--family2);
+    line-height: 2rem;
+    font-weight: var(--weight-semibold);
+}
+section.artigos p {
+    padding: 1.3rem 0rem;
+    font-size: var(--font-size);
+    color: var(--grey);
+}
+section.artigos .price {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:.7rem;
+}
+.price strong {
+    color: var(--green500);
+    font-size: 2rem;
+    font-family: var(--family2);
+    font-weight: var(--weight-semibold);
+}
+.price s {
+    color: var(--grey);
+    font-size: .8rem;
+}
+section.artigos a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: var(--weight-regular);
+    padding: 1rem;
+    border-radius: .6rem;
+    background-color: var(--green500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:.7rem;
+}
+section.artigos a:hover {
+    background-color: var(--green700);
+}
+@media screen and (min-width:48rem) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 37.5rem;
+    section.img {
+        grid-column:1 / 2 ;
+        height: 100%;
+    }
+    picture img {
+        object-fit: cover;
+        height: 100%;
+        object-position: center center;
+    }
+    section.artigos {
+        grid-column:2 / 3 ;
+        width: 100%;
+        padding: 2rem;
+    }
+    section.artigos p {
+        line-height: 1.6rem;
+    }
+}
